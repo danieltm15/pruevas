@@ -34,16 +34,22 @@ db.session.commit()
 
 @app.route('/')
 def inicio():
-    admin=Admin.query.filter_by(id_admin='admin',password_admin='0000').first()
-    print("aaaaaaaaaaaaaaaa")
-    if(admin == None):
+    adminVerif=Admin.query.filter_by(id_admin='admin',password_admin='0000').first()
+    if(adminVerif == None):
         #creacion de admin
         admins=Admin("admin","0000")
         db.session.add(admins)
         db.session.commit()    
     return redirect('login')
+
 @app.route('/login')
 def get_login():
+    adminveri=Admin.query.filter_by(id_admin='admin',password_admin='0000').first()
+    if(adminveri == None):
+        #creacion de admin
+        admins=Admin("admin","0000")
+        db.session.add(admins)
+        db.session.commit()  
     return render_template("login.html")
 
 @app.route('/home')
@@ -180,7 +186,17 @@ def registrar_venta():
         return redirect("ventas")
     elif descuento=="":
         descuento=0
+    else:
+        descuento=int(descuento)
+
+    changeCantidad = Product.query.filter_by(id=producto).first()
+    if int(changeCantidad.amount) < int(cantidad):
+        return "No hay suficiente producto"
+    
+
+    changeCantidad.amount= int(changeCantidad.amount)-int(cantidad)
     venta = Sold(descuento, cantidad, producto, fecha)
+    
     db.session.add(venta)
     db.session.commit()
     global id_facturar

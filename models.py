@@ -68,7 +68,9 @@ class Sold(db.Model):
         product=Product.query.filter_by(id=producto).first()
         self.id_product=producto
         sudtotal=product.price_sale*int(amount_sold)
-        factura = Factura(sudtotal, fecha, 0.19, 1.19*sudtotal)
+        factura = Factura(sudtotal*(1-int(discount)/100), fecha, 0.19, 1.19*sudtotal)
+        print(int(discount)/100)
+
         db.session.add(factura)
         db.session.commit()
         self.id_factura=factura.id_factura
