@@ -12,6 +12,20 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:root@localhost:54
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'some-secret-key'
 
+@app.route('/')
+def inicio():
+    """admin=Admin.query.filter_by(id_admin='admin',password_admin='0000').first()
+    if(admin == None):
+        #creacion de admin
+        admins=Admin("admin","0000")
+        db.session.add(admins)
+        db.session.commit()   """  
+    return redirect('login')
+@app.route('/login')
+def get_login():
+    return render_template("login.html")
+
+"""
 db = SQLAlchemy(app)
 
 # Importar los modelos
@@ -25,18 +39,7 @@ db.session.commit()
 
 
 # Rutas de paginas
-@app.route('/')
-def inicio():
-    """admin=Admin.query.filter_by(id_admin='admin',password_admin='0000').first()
-    if(admin == None):
-        #creacion de admin
-        admins=Admin("admin","0000")
-        db.session.add(admins)
-        db.session.commit()     
-    return redirect('login')"""
-@app.route('/login')
-def get_login():
-    return render_template("login.html")
+
 @app.route('/home')
 def get_home():
     return render_template("home.html")
@@ -260,7 +263,7 @@ def get_facturar():
         producto = Product.query.filter_by(id=ventas.id_product).first()
         
         return render_template("facturar.html", factura=factura, ventas=ventas, producto=producto)
-
+"""
 
 if __name__ == "__main__":
     app.run(port=PORT,debug=DEBUG)
