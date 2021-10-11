@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .center {
+            text-align: center;
+        }
+        body {
+            background-color: lightblue;
+        }
+
+        .navegacion{
+            width: 800px;
+            margin: 30px auto;
+            background: none;
+            
+        }
+
+        .navegacion ul{
+            list-style: none;
+        }
+
+        .menu > li{
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Menu horizontal */
+        .menu > li > a {
+            display: block;
+            padding: 15px 20px;
+            color: #353535;
+            font-family: 'Open sans';
+            text-decoration: none;
+        }
+
+
+        .submenu{
+            position: absolute;
+            background-color:rgb(190, 223, 235);    
+            /* El width es el ancho de la caja */
+            width: 100%; 
+            display: none; 
+        }
+
+        .submenu li a{
+            display: block;
+            /* El padding son los margenes internos de una caja */
+            padding: 15px;
+            color: rgb(22, 56, 68);
+            font-family: 'Open sans';
+            text-decoration: none;
+            
+        }
+
+        .menu li:hover .submenu{
+            display: block;
+        }
+
+        /* Texto sobre la imagen */
+        .contenedor{
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        }
+        .texto-encima{
+            position: absolute;
+            top: 0px;
+            left: 10px;
+        }
+        .centrado{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <!-- <div class="textos-hero">
+            <img src="695.jpg" alt="banner" width="100%" height="50%" />
+            <h1>Bienvenido a Tiendup</h1>
+            <p>Tu mejor aliado</p>
+            <a href="#contactanos">Contactanos</a>
+        </div> -->
+
+        <!--<div class="contenedor">
+            <img src="abc.jpg" alt="banner" width="100%" height="50%">
+            <div class="texto-encima">
+                <nav class="navegacion">
+                    <ul class="menu">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Servicios</a>
+                            <ul class="submenu">
+                                <li><a href="#">Ingresos</a></li>
+                                <li><a href="#">Gastos</a></li>
+                                <li><a href="#">Inventarios</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Clientes</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- <div class="centrado">Centrado</div> -->
+          </div>
+
+
+
+        <!-- Ola divisoria -->
+        <!-- <div style="height: 150px; overflow: hidden;" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-1.41,46.88 C241.82,180.11 400.39,-105.08 500.00,49.98 L500.00,150.00 L-5.36,154.45 Z" style="stroke: none; fill: #08f;"></path></svg></div> -->
+
+        
+
+    </header>
+
+    
+
+
+    <header> 
+
+    <h1 class="center">La tienda</h1>
+    </br>
+    </br>
+    </br>
+    <h2 class="center">Inicio de sesion</h2>
+</br>
+
+    <form >
+    <div class="center">
+        <input type="email" name="email" placeholder="Your email">
+    </div>
+    <div class="center">
+        <input type="password" name="password" placeholder="Your password">
+    </div>
+    <div class="center">
+        <button>Ingreso</button>
+    </div>
+    </form>
+    
+    <br>
+    <div class="center">
+        <a href="/forgetpass">¿Olvido su contraseña?</a>
+        <a href="/signup">Registrese</a>
+        <a href="/admin">Modo administrador</a>
+
+
+    </div>
+    
+    </header>
+</br>
+</br>
+</br>
+</br>
+</br>
+<center>
+    <section class="wave contenedor website">
+        
+        <div class="contenedor-textos-main" class="center">
+            <p class="parrafo">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        </br> <p>Doloremque sed culpa laudantium itaque ab dolores voluptate dolorem reiciendis</p>
+        </br> <p>recusandae veritatis voluptates asperiores saepe perspiciatis vel aliquam ea voluptatibus, porro eaque!</p>
+            
+
+        </div>
+
+    </section>
+</center>
+
+</body>
+</html>
