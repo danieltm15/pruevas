@@ -182,7 +182,7 @@ def registrar_venta():
     cantidad=request.form["cantidad"]
     descuento=request.form["descuento"]
     fecha = (date.today())
-    if cantidad=="":
+    if cantidad=="" or cantidad=="0":
         return redirect("ventas")
     elif descuento=="":
         descuento=0
