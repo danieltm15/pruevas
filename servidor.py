@@ -167,6 +167,8 @@ def create_product():
     lote=request.form["lote"]
     price_sale= request.form["price_sale"]
     amount = request.form["amount"]
+    if lote=="":
+        lote=date(1000, 1,1)
 
     producto = Product(name, description,pricebuy,category,lote,price_sale,amount)
     gasto = Gastos(0,0,0,0,date.today(),pricebuy,amount)
