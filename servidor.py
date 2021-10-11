@@ -39,7 +39,7 @@ def inicio():
 def get_login():
     return render_template("login.html")
 
-"""
+
 
 # Rutas de paginas
 
@@ -266,7 +266,7 @@ def get_facturar():
         producto = Product.query.filter_by(id=ventas.id_product).first()
         
         return render_template("facturar.html", factura=factura, ventas=ventas, producto=producto)
-"""
+
 
 if __name__ == "__main__":
     app.run(port=PORT,debug=DEBUG)
