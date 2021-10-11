@@ -35,6 +35,7 @@ db.session.commit()
 @app.route('/')
 def inicio():
     admin=Admin.query.filter_by(id_admin='admin',password_admin='0000').first()
+    print("aaaaaaaaaaaaaaaa")
     if(admin == None):
         #creacion de admin
         admins=Admin("admin","0000")
