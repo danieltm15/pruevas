@@ -12,6 +12,19 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:root@localhost:54
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'some-secret-key'
 
+
+db = SQLAlchemy(app)
+
+# Importar los modelos
+
+from models import Product, User, Admin, Lote, Sold, Factura, Gastos
+
+
+# Crear el esquema de la DB
+db.create_all()  
+db.session.commit()
+
+
 @app.route('/')
 def inicio():
     """admin=Admin.query.filter_by(id_admin='admin',password_admin='0000').first()
@@ -26,17 +39,6 @@ def get_login():
     return render_template("login.html")
 
 """
-db = SQLAlchemy(app)
-
-# Importar los modelos
-
-from models import Product, User, Admin, Lote, Sold, Factura, Gastos
-
-
-# Crear el esquema de la DB
-db.create_all()  
-db.session.commit()
-
 
 # Rutas de paginas
 
