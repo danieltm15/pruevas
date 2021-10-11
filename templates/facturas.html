@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facturas</title>
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        .center {
+            text-align: center;
+        }
+        body {
+    background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+ <div class="center">  
+ <h1>Facturas</h1>
+</br>
+</br>
+<center>
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Subtotal</td>
+        <td>Iva</td>
+        <td>Total</td>
+        <td>Fecha</td>
+    </tr>
+        {%  for facturas in factura:  %}
+    <tr>
+        <td>{{facturas.id_factura}}</td>
+        <td>{{  facturas.precio_venta  }}</td>
+        <td>{{facturas.taxes}}</td>
+        <td>{{facturas.total}}</td>
+        <td>{{facturas.fecha_venta}}</td>
+    </tr>
+        {%  endfor  %}
+</table>
+</center>
+</div>
+
+
+
+</br>
+<div class="center">
+    <a href="/home">Regresar</a>
+</div>
+
+</body>
+</html>

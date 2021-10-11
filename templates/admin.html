@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InicioLatienda</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        .center {
+            text-align: center;
+        }
+        body {
+    background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="center">La tienda</h1>
+</br>
+</br>
+</br>
+    <h3 class="center">Administrador</h3>
+    <p class="center">El id es: admin, la contraseña es: 0000</p>
+    <form action="{{url_for('verify_admin')}}"method="post">
+    <div class="center">
+        <input type="text" name="adminId" placeholder="Id">
+    </div>
+    <div class="center">
+        <input type="password" name="password" placeholder="Your password">
+    </div>
+    <div class="center">
+        <button>Submit</button>
+    </div>
+    </form> 
+</br>
+
+    <div class="center">
+        <a href="/login">Regresar</a>
+
+
+    </div>
+    
+</body>
+</html>

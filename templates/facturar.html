@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facturas</title>
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        .center {
+            text-align: center;
+        }
+        body {
+    background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+ <div class="center">  
+ <h1>Facturas</h1>
+<table>
+    <tr>
+          <th></th>
+          <th>Factura</th>
+          <th></th>
+    </tr>
+    <tr>
+        <th>ID: {{factura.id_factura}}</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th>Fecha:</th>
+        <th>{{factura.fecha_venta}}</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>Producto</td>
+        <td>Cantidad</td>
+        <td>Descuento</td>
+        <td>Precio</td>
+    </tr>
+    <tr>
+        <td>{{producto.name}}</td>
+        <td>{{  ventas.amount_sold  }}</td>
+        <td>{{ventas.discount}}</td>
+        <td>{{producto.price_sale}}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Subtotal:</td>
+        <td>{{  factura.precio_venta  }}</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Iva:</td>
+        <td>{{factura.taxes}}</td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Total:</td>
+        <td>{{factura.total}}</td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+</div>
+
+
+
+<div class="left">
+    <a href="/home">Regresar</a>
+</div>
+
+</body>
+</html>

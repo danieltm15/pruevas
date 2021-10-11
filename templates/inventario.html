@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        .center {
+            text-align: center;
+        }
+        body {
+    background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+ <div class="center">  
+ <h1>Inventario</h1>
+ <center>
+    <table>
+        <tr>
+            <td>id</td>
+            <td>nombre</td>
+            <td>descripcion</td>
+            <td>precio de compra</td>
+            <td>categoria</td>
+            <td>lote</td>
+            <td>precio de venta</td>
+            <td>cantidad</td>
+        </tr>
+            {%  for dato in datos:  %}
+        <tr>
+            <td>{{dato.id}}</td>
+            <td>{{  dato.name  }}</td>
+            <td>{{dato.description}}</td>
+            <td>{{dato.price_buying}}</td>
+            <td>{{dato.category}}</td>
+            <td>{{dato.lote}}</td>
+            <td>{{dato.price_sale}}</td>
+            <td>{{dato.amount}}</td>
+        </tr>
+    {%  endfor  %}
+    </table>
+    </center>
+</div>
+
+<div class="center">
+    <h3>Digite el id correspondiente para eliminar</h3>
+    <form action="{{url_for('del_product')}}" method="post">
+        <div>
+            <input type="number" name="id_product" placeholder="Id del producto">
+        </div>
+        <div >
+            <button >Eliminar </button>
+        </div>
+    
+    </form>
+</div></br>
+
+<div class="center">
+    <a href="/home">Regresar</a>
+
+
+</div>
+
+</body>
+</html>

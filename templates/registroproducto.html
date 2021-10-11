@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Registro de productos</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+        body {
+    background-color: lightblue;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <h1 class="center">Registro de productos</h1>
+</br>
+</br>
+    <div class="center">
+    <form action="{{url_for('create_product')}}"method="post">
+        <div>
+            <label for="name">Producto:</label>
+            <input type="text" name="name" placeholder="Nombre del producto">
+        </div>
+        <div>
+            <label for="description">Descripcion:</label>
+            <input type="text" name="description" placeholder="Descripción del producto">
+        </div>
+        <div>
+            <label for="lote">Lote:</label>
+            <input type="date" name="lote" placeholder="Lote">
+        </div>
+        <div>
+            <label for="price_buying">Precio de compra:</label>
+            <input type="number" name="price_buying">
+        </div>
+        <div>
+        <label for="category">Categoria:</label>
+        <select name="category">
+            <option value="Abarrotes">Abarrotes</option>
+            <option value="Ferreteria">Ferreteria</option>
+            <option value="Miscelanea">Miscelanea</option>
+            <option value="Moda">Moda-ropa</option>
+            <option value="Farmacia">Farmacia</option>    
+            <option value="Carniceria">Carniceria</option>             
+
+        </select>
+        </div>  
+                   
+        <div>
+            <label for="price_sale">Precio de venta:</label>
+            <input type="number" name="price_sale">
+        </div>    
+        
+        <div>
+            <label for="amount">Cantidad</label>
+            <input type="number" name="amount">
+        </div>
+        <div >
+            <button >Registrar producto</button>
+        </div>
+        </form>
+    </div>
+    
+    <div class="center">
+        <a href="/home">Regresar</a>
+
+
+    </div>
+</body>
+</html>

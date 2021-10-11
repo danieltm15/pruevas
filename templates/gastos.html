@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gastos</title>
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        .center {
+            text-align: center;
+        }
+        body {
+    background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+ <div class="center">  
+    <h1>Gastos</h1>
+    </br>
+    </br>
+    <center>
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Compra de Inventario</td>
+            <td>Almacenamiento</td>
+            <td>Servicios</td>
+            <td>Administracion</td>
+            <td>Otros</td>
+            <td>Fecha</td>
+        </tr>
+            {%  for dato in gastos:  %}
+        <tr>
+            <td>{{dato.id_gasto}}</td>
+            <td>{{  dato.price_buy  }}</td>
+            <td>{{dato.storagecost}}</td>
+            <td>{{dato.servicecost}}</td>
+            <td>{{dato.admincost}}</td>
+            <td>{{dato.others}}</td>
+            <td>{{dato.datetime}}</td>
+        </tr>
+        {%  endfor  %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total:</td>
+            <td>{{total}}</td>
+        </tr>
+    </table>
+    </center>
+</div>
+
+
+</br>
+
+<div class="center">
+    <a href="/home">Regresar</a>
+
+</div>
+
+</body>
+</html>
