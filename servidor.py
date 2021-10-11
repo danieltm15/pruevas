@@ -26,22 +26,24 @@ db.create_all()
 db.session.commit()
 
 
-@app.route('/')
-def inicio():
-    """admin=Admin.query.filter_by(id_admin='admin',password_admin='0000').first()
-    if(admin == None):
-        #creacion de admin
-        admins=Admin("admin","0000")
-        db.session.add(admins)
-        db.session.commit()   """  
-    return redirect('login')
-@app.route('/login')
-def get_login():
-    return render_template("login.html")
 
 
 
 # Rutas de paginas
+
+
+@app.route('/')
+def inicio():
+    admin=Admin.query.filter_by(id_admin='admin',password_admin='0000').first()
+    if(admin == None):
+        #creacion de admin
+        admins=Admin("admin","0000")
+        db.session.add(admins)
+        db.session.commit()    
+    return redirect('login')
+@app.route('/login')
+def get_login():
+    return render_template("login.html")
 
 @app.route('/home')
 def get_home():

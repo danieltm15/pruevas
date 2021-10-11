@@ -105,7 +105,7 @@
     <h2 class="center">Inicio de sesion</h2>
 </br>
 
-    <form>
+    <form action="{{url_for('verify_user')}}"method="POST">
     <div class="center">
         <input type="email" name="email" placeholder="Your email">
     </div>
