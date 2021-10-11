@@ -18,13 +18,7 @@ db = SQLAlchemy(app)
 
 from models import Product, User, Admin, Lote, Sold, Factura, Gastos
 
-@app.route('/')
-def inicio():
-    return redirect('login')
-@app.route('/login')
-def get_login():
-    return render_template("login.html")
-"""
+
 # Crear el esquema de la DB
 db.create_all()  
 db.session.commit()
@@ -266,8 +260,6 @@ def get_facturar():
         producto = Product.query.filter_by(id=ventas.id_product).first()
         
         return render_template("facturar.html", factura=factura, ventas=ventas, producto=producto)
-""" 
-
 
 
 if __name__ == "__main__":
