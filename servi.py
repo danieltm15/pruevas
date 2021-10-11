@@ -5,5 +5,5 @@ app = Flask(__name__)
 def alguien_entro_a_la_ruta():
 	return 'Funciona!!!!'
 
-if __name__ == "__main__":
+if __name__ == "__servi__":
     app.run()
